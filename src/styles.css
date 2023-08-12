@@ -1,0 +1,205 @@
+:root {
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
+    background: linear-gradient(-90deg, #bcbcbe, #000000, #b3afb1, #000000);
+    /* background-size: 400% 400%; */
+    animation: gradient 10s ease infinite;
+    background-size: 400%;
+
+}
+
+.is-hidden {
+    display: none
+}
+
+.load-more.is-hidden {
+    display: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4 0px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 2px -2px rgba(0, 0, 0, 0.12);
+}
+
+img {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.info {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    height: 60px;
+    padding: 5px;
+
+    background: linear-gradient(-45deg, #c8e237, #f02673, #e43428);
+    animation: gradient 10s ease infinite;
+    box-shadow: 10px 5px 10px -5px rgba(0, 0, 0, 0.95);
+
+}
+
+.gallery__image:hover {
+    transform: scale(2.03);
+    transition: 0.7s ease-in-out;
+
+}
+
+
+.gallery__image {
+    display: block;
+    max-width: 100%;
+    /* height: auto; */
+    transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery__link {
+    display: block;
+    text-decoration: none;
+    height: 200px;
+    overflow: hidden;
+}
+
+.gallery__link:hover {
+    cursor: zoom-in;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8483ec;
+    z-index: 100;
+    background: linear-gradient(-45deg, #2135f0, #c8e237, #f02673, #e43428);
+    /* background-size: 400% 400%; */
+    animation: gradient 10s ease infinite;
+    box-shadow: 10px 5px 10px -5px rgba(0, 0, 0, 0.95);
+    background-size: 400%;
+    /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* input[type='text'] {
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-right: 10px;
+} */
+input[type='text'] {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+    margin-right: 10px;
+}
+
+.input[type='text']:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+        -13px -13px 100px #ffffff;
+}
+
+/* button[type='submit'] {
+  background-color: #d60eb5;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+} */
+
+button[type='submit'] {
+    width: 7em;
+    height: 2.5em;
+    border-radius: 15px;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 2px 2px 4px #bcff02,
+        -2px -2px 4px #eeff03;
+}
+
+button[type='submit']::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #d85f0f 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button[type='submit']:hover::before {
+    width: 9em;
+}
+
+/* button[type='submit']:hover {
+  background-color: #0062cc;
+} */
+
+.gallery {
+    margin-top: 100px;
+}
+
+.end {
+    text-align: center;
+}
